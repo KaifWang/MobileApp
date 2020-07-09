@@ -4,12 +4,12 @@ import Header from './Header';
 import ListItem from './ListItem';
 import AddItem from './AddItem';
 
-const TaskPage = () => {
+const TaskPage = ({navigation}) => {
 const [items, setItems] = useState([
-  {id: 1, text: 'Milk'},
-  {id: 2, text: 'Bread'},
-  {id: 3, text: 'Eggs'},
-  {id: 4, text: 'Juice'}
+  {id: 1, text: 'EECS281 Final Exam Prep'},
+  {id: 2, text: 'Play League of Legend'},
+  {id: 3, text: 'Eat budae jjigae'},
+  {id: 4, text: 'Sleep'}
 ]);
 
 const deleteItem = (id) => {
@@ -37,6 +37,7 @@ const addItem = (text) => {
       data={items} 
       renderItem={({item}) => <ListItem item={item} 
       deleteItem={deleteItem}
+      navigation={navigation}
        />}
       />
       </View>
